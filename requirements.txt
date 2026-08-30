@@ -1,30 +1,17 @@
-# Core deep learning
 torch
 torchvision
 timm==1.0.28
 ultralytics==8.4.115
-
-# Image processing and augmentation
 albumentations==2.0.8
 opencv-python
-
-# Data analysis and scientific computing
 numpy
 pandas
 scipy
 scikit-learn
-
-# Explainable AI
 grad-cam
-
-# Plotting and progress
 matplotlib
 tqdm
-
-# Dataset access and utilities
 huggingface-hub
 requests
 PyYAML
-
-# Notebook utilities
 ipython
