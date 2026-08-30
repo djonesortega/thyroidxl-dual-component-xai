@@ -1,0 +1,190 @@
+{
+  "status": "THYROIDXL_YOLO_SINGLE_FINAL_MODEL_OFFICIAL_TEST",
+  "evaluation_model_count": 1,
+  "development_checkpoint_loaded": false,
+  "official_test_accessed": true,
+  "official_test_used_for_tuning": false,
+  "custom_mask_inference": {
+    "retina_masks": true,
+    "geometry": "original_ultrasound"
+  },
+  "dataset": "ThyroidXL",
+  "dataset_repo": "hunglc007/ThyroidXL",
+  "dataset_revision": "b15fe293bd74f1a8a4f05bf88bcdf06a1934125f",
+  "checkpoint": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\Models\\YOLOv8sSeg\\thyroidxl_yolov8s_seg_officialtrain9541_onefoldselected_640_seed42_final.pt",
+  "checkpoint_sha256": "a9dcd76aa76fa91ae2b9d61820fdd53a06df7e98f10efb5bb2dea8efdc01e92b",
+  "training_manifest": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\Evaluation\\YOLO\\thyroidxl_yolov8s_seg_officialtrain9541_onefoldselected_640_seed42_final_training_manifest.json",
+  "provenance_source": "external_training_manifest_required",
+  "ultralytics_version": "8.4.115",
+  "official_training_images": 9541,
+  "official_training_patients": 3354,
+  "official_test_images": 2094,
+  "official_test_patients": 739,
+  "train_test_patient_overlap": 0,
+  "train_test_filename_overlap": 0,
+  "score_definition": "max malignant detection confidence - max benign detection confidence",
+  "score_note": "Signed detector evidence is an operating/ranking score, not a calibrated probability.",
+  "reporting_policy": {
+    "primary_discrimination": [
+      "ROC-AUC",
+      "AUPRC"
+    ],
+    "primary_image_threshold": 0.0,
+    "primary_patient_threshold": 0.0,
+    "primary_threshold_reason": "fixed neutral signed-score threshold; score > 0 is malignant and ties/no-detections are benign; chosen independently of official test",
+    "patient_aggregation": "mean image signed malignant score across patient frames",
+    "optional_development_thresholds_present": false,
+    "zero_threshold_comparator": ">",
+    "zero_score_tie_policy": "benign"
+  },
+  "inference": {
+    "image_size": 640,
+    "retrieval_confidence": 0.001,
+    "nms_iou": 0.7,
+    "max_detections": 300,
+    "augment": false
+  },
+  "ultralytics_detection_segmentation": {
+    "box_precision": 0.7928574079304743,
+    "box_recall": 0.8419084227349527,
+    "box_map50": 0.8811699751474044,
+    "box_map50_95": 0.5737667711732352,
+    "mask_precision": 0.7927076157712195,
+    "mask_recall": 0.8446599970246349,
+    "mask_map50": 0.8844105350907971,
+    "mask_map50_95": 0.5726087643358283,
+    "benign_box_map50_95": 0.6120406152416626,
+    "malignant_box_map50_95": 0.5354929271048079,
+    "benign_mask_map50_95": 0.6083830921229216,
+    "malignant_mask_map50_95": 0.536834436548735
+  },
+  "image_level_classification_primary": {
+    "threshold": 0.0,
+    "threshold_comparison": ">",
+    "n": 2094,
+    "roc_auc": 0.9265455412144323,
+    "auprc": 0.9121221120234501,
+    "accuracy": 0.8553008595988538,
+    "balanced_accuracy": 0.8519507186858316,
+    "sensitivity_malignant": 0.8039014373716632,
+    "specificity_benign": 0.9,
+    "precision_malignant": 0.8748603351955307,
+    "f1_malignant": 0.8378812199036918,
+    "mcc": 0.7097072350074465,
+    "tn": 1008,
+    "fp": 112,
+    "fn": 191,
+    "tp": 783
+  },
+  "patient_level_classification_primary": {
+    "threshold": 0.0,
+    "threshold_comparison": ">",
+    "n": 739,
+    "roc_auc": 0.9478929677523521,
+    "auprc": 0.9406859405201072,
+    "accuracy": 0.8836265223274695,
+    "balanced_accuracy": 0.8814565016366012,
+    "sensitivity_malignant": 0.8328611898016998,
+    "specificity_benign": 0.9300518134715026,
+    "precision_malignant": 0.9158878504672897,
+    "f1_malignant": 0.8724035608308606,
+    "mcc": 0.7688035235708359,
+    "tn": 359,
+    "fp": 27,
+    "fn": 59,
+    "tp": 294
+  },
+  "patient_level_bootstrap_95_ci_primary": {
+    "roc_auc": [
+      0.9316915425529269,
+      0.9619671064314788
+    ],
+    "auprc": [
+      0.9198700597950861,
+      0.9589893137454063
+    ],
+    "accuracy": [
+      0.8592692828146143,
+      0.9052774018944519
+    ],
+    "balanced_accuracy": [
+      0.8574383138109255,
+      0.9028964778745137
+    ],
+    "sensitivity_malignant": [
+      0.7916666666666666,
+      0.8689044769792618
+    ],
+    "specificity_benign": [
+      0.904755216693419,
+      0.9552660933830639
+    ],
+    "f1_malignant": [
+      0.8450670796933499,
+      0.8960295135883677
+    ],
+    "mcc": [
+      0.7213776686432304,
+      0.8108761814045323
+    ]
+  },
+  "development_threshold_secondary": null,
+  "case_level_segmentation": {
+    "geometry": "original_ultrasound",
+    "coordinate_policy": "Custom inference uses retina_masks=True so Ultralytics returns the selected mask in native original-ultrasound HxW. A polygon-raster fallback is used only if a shape mismatch is detected; blind resizing of a letterboxed mask is prohibited.",
+    "detection_coverage": 0.9995224450811844,
+    "end_to_end_all_images": {
+      "n_images": 2094,
+      "mean_mask_iou": 0.7961655125684572,
+      "median_mask_iou": 0.8278706173288704,
+      "mean_mask_dice": 0.8777916930991848,
+      "median_mask_dice": 0.9058306523134918
+    },
+    "end_to_end_benign": {
+      "n_images": 1120,
+      "mean_mask_iou": 0.803727126459847,
+      "median_mask_iou": 0.8555060694722025,
+      "mean_mask_dice": 0.8781922008475145,
+      "median_mask_dice": 0.9221269140832151
+    },
+    "end_to_end_malignant": {
+      "n_images": 974,
+      "mean_mask_iou": 0.7874704329397544,
+      "median_mask_iou": 0.8060203150302989,
+      "mean_mask_dice": 0.8773311503084976,
+      "median_mask_dice": 0.892592743935125
+    },
+    "detected_only_all": {
+      "n_images": 2093,
+      "mean_mask_iou": 0.7965459069844001,
+      "median_mask_iou": 0.8279118572927597,
+      "mean_mask_dice": 0.8782110871235991,
+      "median_mask_dice": 0.9058553386911596
+    },
+    "detected_only_benign": {
+      "n_images": 1119,
+      "mean_mask_iou": 0.8044453812645477,
+      "median_mask_iou": 0.8558082360172096,
+      "mean_mask_dice": 0.8789770017419268,
+      "median_mask_dice": 0.9223024441942108
+    },
+    "detected_only_malignant": {
+      "n_images": 974,
+      "mean_mask_iou": 0.7874704329397544,
+      "median_mask_iou": 0.8060203150302989,
+      "mean_mask_dice": 0.8773311503084976,
+      "median_mask_dice": 0.892592743935125
+    },
+    "note": "End-to-end Dice/IoU assigns 0 to images with no usable YOLO mask. Detected-only values are reported separately."
+  },
+  "segmentation_bootstrap_95_ci_patient_cluster": {
+    "mean_mask_dice": [
+      0.870260166866233,
+      0.8847146446474566
+    ],
+    "mean_mask_iou": [
+      0.7875028013365855,
+      0.804717310251751
+    ]
+  }
+}

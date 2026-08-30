@@ -1,0 +1,20 @@
+{
+  "status": "THYROIDXL_FOUR_MODEL_COMMON_SUBGROUPS_FROZEN_FROM_OFFICIAL_TRAIN",
+  "dataset_repo": "hunglc007/ThyroidXL",
+  "dataset_revision": "b15fe293bd74f1a8a4f05bf88bcdf06a1934125f",
+  "official_training_images": 9541,
+  "official_training_patients": 3354,
+  "image_size_definition": "original-image expert nodule-mask foreground fraction",
+  "image_q1": 0.033265764135234924,
+  "image_q2": 0.07447177089904955,
+  "patient_size_definition": "mean original-image expert-mask fraction across patient frames",
+  "patient_q1": 0.034033883921670775,
+  "patient_q2": 0.07576885818397436,
+  "models": [
+    "MobileNetV3",
+    "EfficientNetB3",
+    "ConvNeXtTiny",
+    "YOLOv8sSeg"
+  ],
+  "official_test_used_to_define_subgroups": false
+}

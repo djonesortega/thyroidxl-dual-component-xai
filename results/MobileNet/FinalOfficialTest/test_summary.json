@@ -1,0 +1,177 @@
+{
+  "status": "THYROIDXL_MOBILENET_FINAL_PUBLICATION_EVALUATION",
+  "dataset": "ThyroidXL",
+  "dataset_repo": "hunglc007/ThyroidXL",
+  "dataset_revision": "b15fe293bd74f1a8a4f05bf88bcdf06a1934125f",
+  "checkpoint": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\Models\\MobileNetV3\\mobilenetv3_thyroidxl_modelB_v2_officialtrain9541_onefoldselected_512_seed42_final.pt",
+  "checkpoint_sha256": "fa620969d04a6d71a2393d22a1da1909d8abf6ec653ab4439905529c4e7f1812",
+  "training_manifest": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\results\\MobileNetV3\\mobilenetv3_thyroidxl_modelB_v2_officialtrain9541_onefoldselected_512_seed42_final_training_manifest.json",
+  "official_training_images": 9541,
+  "official_training_patients": 3354,
+  "official_test_images": 2094,
+  "official_test_patients": 739,
+  "train_test_patient_overlap": 0,
+  "train_test_filename_overlap": 0,
+  "official_test_used_for_tuning": false,
+  "reporting_policy": {
+    "primary_discrimination": [
+      "ROC-AUC",
+      "AUPRC"
+    ],
+    "primary_image_threshold": 0.5,
+    "primary_patient_threshold": 0.5,
+    "secondary_patient_threshold": 0.267242431640625,
+    "secondary_patient_threshold_source": "Fold-1 development Youden J saved before final refit",
+    "primary_patient_aggregation": "mean malignant probability across all patient frames",
+    "secondary_benchmark_patient_aggregation": "confidence-weighted majority voting"
+  },
+  "image_metrics_0_5": {
+    "threshold": 0.5,
+    "n": 2094,
+    "roc_auc": 0.9199591155764154,
+    "auprc": 0.9027718843724888,
+    "accuracy": 0.8180515759312321,
+    "balanced_accuracy": 0.8095675051334703,
+    "sensitivity_malignant": 0.6878850102669405,
+    "specificity_benign": 0.93125,
+    "precision_malignant": 0.8969210174029452,
+    "f1_malignant": 0.778617083091226,
+    "mcc": 0.644658560058138,
+    "brier": 0.143411517330843,
+    "tn": 1043,
+    "fp": 77,
+    "fn": 304,
+    "tp": 670
+  },
+  "patient_metrics_0_5_primary": {
+    "threshold": 0.5,
+    "n": 739,
+    "roc_auc": 0.9417281921061516,
+    "auprc": 0.9310643439097412,
+    "accuracy": 0.8281461434370772,
+    "balanced_accuracy": 0.8227773782089859,
+    "sensitivity_malignant": 0.7025495750708215,
+    "specificity_benign": 0.9430051813471503,
+    "precision_malignant": 0.9185185185185185,
+    "f1_malignant": 0.7961476725521669,
+    "mcc": 0.6696467831737402,
+    "brier": 0.11922525649411968,
+    "tn": 364,
+    "fp": 22,
+    "fn": 105,
+    "tp": 248
+  },
+  "patient_metrics_development_threshold_secondary": {
+    "threshold": 0.267242431640625,
+    "n": 739,
+    "roc_auc": 0.9417281921061516,
+    "auprc": 0.9310643439097412,
+    "accuracy": 0.857916102841678,
+    "balanced_accuracy": 0.8572083840948788,
+    "sensitivity_malignant": 0.8413597733711048,
+    "specificity_benign": 0.8730569948186528,
+    "precision_malignant": 0.8583815028901735,
+    "f1_malignant": 0.8497854077253219,
+    "mcc": 0.7151519379387531,
+    "brier": 0.11922525649411968,
+    "tn": 337,
+    "fp": 49,
+    "fn": 56,
+    "tp": 297
+  },
+  "patient_metrics_wmv_secondary": {
+    "n": 739,
+    "accuracy": 0.8308525033829499,
+    "balanced_accuracy": 0.8256102393987876,
+    "sensitivity_malignant": 0.7082152974504249,
+    "specificity_benign": 0.9430051813471503,
+    "precision_malignant": 0.9191176470588235,
+    "f1_malignant": 0.8,
+    "mcc": 0.6744754739717989,
+    "tn": 364,
+    "fp": 22,
+    "fn": 103,
+    "tp": 250
+  },
+  "calibration": {
+    "image_ece_10": 0.12434309779966969,
+    "patient_ece_10": 0.11295054437712805,
+    "image_brier": 0.143411517330843,
+    "patient_brier": 0.11922525649411968
+  },
+  "segmentation": {
+    "threshold": 0.5,
+    "mean_dice": 0.8647391364724308,
+    "median_dice": 0.8969882714560322,
+    "mean_iou": 0.777085548897469,
+    "median_iou": 0.8132173484449525,
+    "geometry": "original_ultrasound",
+    "coordinate_policy": "Generate the auxiliary segmentation probability map on the exact aspect-ratio-preserving padded 512x512 model input; after inference remove only synthetic preprocessing padding, resize the valid probability map to the original ultrasound dimensions, apply the frozen 0.5 mask threshold, and compare with the untouched original expert mask.",
+    "directly_comparable_to_custom_yolo_original_geometry": true,
+    "historical_padded_512_secondary": {
+      "mean_dice": 0.8652425707811888,
+      "median_dice": 0.8977839052677155,
+      "mean_iou": 0.7779077639024393,
+      "median_iou": 0.8145262598991394,
+      "geometry": "512x512 aspect-ratio-preserving resize/pad evaluation space"
+    }
+  },
+  "bootstrap_95_ci": {
+    "patient_roc_auc": [
+      0.9250711267567726,
+      0.9575800016964231
+    ],
+    "patient_auprc": [
+      0.9058079723632363,
+      0.9524098278483427
+    ],
+    "patient_accuracy_0_5": [
+      0.7997293640054127,
+      0.8552097428958051
+    ],
+    "patient_balanced_accuracy_0_5": [
+      0.7957065934218205,
+      0.8488651828028319
+    ],
+    "patient_sensitivity_0_5": [
+      0.6531137544982007,
+      0.7507262242007284
+    ],
+    "patient_specificity_0_5": [
+      0.9194432199832073,
+      0.9644692539998715
+    ],
+    "patient_f1_0_5": [
+      0.7594438506361411,
+      0.8296536618062463
+    ],
+    "patient_mcc_0_5": [
+      0.618360124408515,
+      0.7192852172740688
+    ],
+    "image_roc_auc_patient_cluster": [
+      0.9027254067516298,
+      0.9365535648150567
+    ],
+    "image_auprc_patient_cluster": [
+      0.8753336578790004,
+      0.9266831886971115
+    ],
+    "mean_segmentation_dice_patient_cluster": [
+      0.8565707094854057,
+      0.8724899013990168
+    ],
+    "mean_segmentation_iou_patient_cluster": [
+      0.7675440031937864,
+      0.7862139693444494
+    ],
+    "mean_segmentation_dice_padded_512_patient_cluster_secondary": [
+      0.8565349906395726,
+      0.8731813505920584
+    ],
+    "mean_segmentation_iou_padded_512_patient_cluster_secondary": [
+      0.7679258651235836,
+      0.7867976024793677
+    ]
+  }
+}

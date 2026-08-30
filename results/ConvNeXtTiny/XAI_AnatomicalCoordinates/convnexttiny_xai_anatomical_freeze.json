@@ -1,0 +1,62 @@
+{
+  "status": "THYROIDXL_CONVNEXTTINY_XAI_MATCHED_ANATOMICAL_PROTOCOL_FROZEN",
+  "protocol_version": "method_specific_anatomical_coordinates_v4",
+  "dataset": "ThyroidXL",
+  "dataset_repo": "hunglc007/ThyroidXL",
+  "dataset_revision": "b15fe293bd74f1a8a4f05bf88bcdf06a1934125f",
+  "model": "ConvNeXt-Tiny",
+  "final_checkpoint": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\Models\\ConvNeXtTiny\\convnexttiny_thyroidxl_multiscale_officialtrain9541_onefoldselected_512_seed42_final.pt",
+  "final_checkpoint_sha256": "bd0f34c35f61d6ad3bba3a01758c37dbb71ddbd928ac93949d9bce16bdb8b53f",
+  "training_manifest": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\results\\ConvNeXtTiny\\convnexttiny_thyroidxl_multiscale_officialtrain9541_onefoldselected_512_seed42_final_training_manifest.json",
+  "final_training_images": 9541,
+  "final_training_patients": 3354,
+  "development_checkpoint_used": false,
+  "configuration_source": "matched_architecture_fixed_16x16_configuration",
+  "xai_layer_selection_data_used": false,
+  "official_test_used_for_xai_layer_selection": false,
+  "selected_methods": {
+    "Grad-CAM": {
+      "target_layers": [
+        "backbone.stages.3.blocks.2.conv_dw"
+      ],
+      "target_resolutions": [
+        16
+      ],
+      "n_target_layers": 1
+    },
+    "Grad-CAM++": {
+      "target_layers": [
+        "backbone.stages.3.blocks.2.conv_dw"
+      ],
+      "target_resolutions": [
+        16
+      ],
+      "n_target_layers": 1
+    },
+    "Layer-CAM": {
+      "target_layers": [
+        "backbone.stages.3.blocks.2.conv_dw"
+      ],
+      "target_resolutions": [
+        16
+      ],
+      "n_target_layers": 1
+    }
+  },
+  "target_layer_policy": "Method-specific locked target resolutions. Each requested resolution resolves to the deepest executed backbone Conv2d at that spatial resolution using architecture plus a zero-valued dummy tensor only.",
+  "same_target_layer_for_all_methods": false,
+  "methods": [
+    "Grad-CAM",
+    "Grad-CAM++",
+    "Layer-CAM"
+  ],
+  "target_policy": "predicted binary class at fixed 0.5 reference threshold: malignant -> +logit; benign -> -logit",
+  "top_fraction": 0.15,
+  "hit_threshold": 0.5,
+  "coordinate_policy": "Generate CAM on the exact padded model input; identify the real-image rectangle with an all-ones valid-region mask transformed by the same resize/pad operations; remove only synthetic padding after CAM generation; resize the valid CAM to original ultrasound geometry; compute localisation against the untouched original expert mask.",
+  "expert_mask_used_to_modify_cam": false,
+  "yolo_mask_used_to_modify_cam": false,
+  "cam_retuned_from_heldout_results": false,
+  "bootstrap_unit": "patient",
+  "bootstrap_samples": 2000
+}

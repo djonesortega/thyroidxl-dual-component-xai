@@ -1,0 +1,78 @@
+{
+  "status": "THYROIDXL_FOUR_MODEL_FINAL_STATISTICAL_ANALYSIS",
+  "official_test_images": 2094,
+  "official_test_patients": 739,
+  "bootstrap_samples": 2000,
+  "bootstrap_seed": 42,
+  "models": [
+    "MobileNetV3",
+    "EfficientNetB3",
+    "ConvNeXtTiny",
+    "YOLOv8sSeg"
+  ],
+  "cnn_scores_are_probabilities": [
+    "MobileNetV3",
+    "EfficientNetB3",
+    "ConvNeXtTiny"
+  ],
+  "nonprobability_scores": {
+    "YOLOv8sSeg": "max malignant confidence - max benign confidence; used for ranking/discrimination only"
+  },
+  "pairwise_comparisons": [
+    [
+      "MobileNetV3",
+      "EfficientNetB3"
+    ],
+    [
+      "MobileNetV3",
+      "ConvNeXtTiny"
+    ],
+    [
+      "MobileNetV3",
+      "YOLOv8sSeg"
+    ],
+    [
+      "EfficientNetB3",
+      "ConvNeXtTiny"
+    ],
+    [
+      "EfficientNetB3",
+      "YOLOv8sSeg"
+    ],
+    [
+      "ConvNeXtTiny",
+      "YOLOv8sSeg"
+    ]
+  ],
+  "prospectively_selected_dual_component_cnn": "ConvNeXtTiny",
+  "selected_cnn_freeze": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\results\\Combined\\selected_cnn_freeze.json",
+  "selected_cnn_freeze_checkpoint_sha256": "bd0f34c35f61d6ad3bba3a01758c37dbb71ddbd928ac93949d9bce16bdb8b53f",
+  "primary_dual_component_pair": [
+    "ConvNeXtTiny",
+    "YOLOv8sSeg"
+  ],
+  "multiplicity_policy": {
+    "patient_exact_mcnemar": "Holm correction across all six pairwise model comparisons",
+    "segmentation_patient_wilcoxon": "Holm correction across six pairwise comparisons separately within Dice and IoU families",
+    "bootstrap_effect_estimates": "effect sizes and 95% paired bootstrap confidence intervals; no p-value multiplicity adjustment applicable"
+  },
+  "sources": {
+    "MobileNetV3": {
+      "summary": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\results\\MobileNet\\FinalOfficialTest\\test_summary.json",
+      "checkpoint_sha256": "fa620969d04a6d71a2393d22a1da1909d8abf6ec653ab4439905529c4e7f1812"
+    },
+    "EfficientNetB3": {
+      "summary": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\results\\EfficientNetB3\\FinalOfficialTest\\test_summary.json",
+      "checkpoint_sha256": "890f719894eab4b36eac3edfbb9fbcceec546daa73c02f6dd9b0400e75e207ea"
+    },
+    "ConvNeXtTiny": {
+      "summary": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\results\\ConvNeXtTiny\\FinalOfficialTest\\test_summary.json",
+      "checkpoint_sha256": "bd0f34c35f61d6ad3bba3a01758c37dbb71ddbd928ac93949d9bce16bdb8b53f"
+    },
+    "YOLOv8sSeg": {
+      "summary": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\results\\YOLO\\FinalOfficialTest\\test_summary.json",
+      "checkpoint_sha256": "a9dcd76aa76fa91ae2b9d61820fdd53a06df7e98f10efb5bb2dea8efdc01e92b"
+    }
+  },
+  "official_test_used_for_tuning": false
+}

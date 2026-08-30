@@ -1,0 +1,177 @@
+{
+  "status": "THYROIDXL_CONVNEXTTINY_FINAL_PUBLICATION_EVALUATION",
+  "dataset": "ThyroidXL",
+  "dataset_repo": "hunglc007/ThyroidXL",
+  "dataset_revision": "b15fe293bd74f1a8a4f05bf88bcdf06a1934125f",
+  "checkpoint": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\Models\\ConvNeXtTiny\\convnexttiny_thyroidxl_multiscale_officialtrain9541_onefoldselected_512_seed42_final.pt",
+  "checkpoint_sha256": "bd0f34c35f61d6ad3bba3a01758c37dbb71ddbd928ac93949d9bce16bdb8b53f",
+  "training_manifest": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\results\\ConvNeXtTiny\\convnexttiny_thyroidxl_multiscale_officialtrain9541_onefoldselected_512_seed42_final_training_manifest.json",
+  "official_training_images": 9541,
+  "official_training_patients": 3354,
+  "official_test_images": 2094,
+  "official_test_patients": 739,
+  "train_test_patient_overlap": 0,
+  "train_test_filename_overlap": 0,
+  "official_test_used_for_tuning": false,
+  "reporting_policy": {
+    "primary_discrimination": [
+      "ROC-AUC",
+      "AUPRC"
+    ],
+    "primary_image_threshold": 0.5,
+    "primary_patient_threshold": 0.5,
+    "secondary_patient_threshold": 0.24900402128696442,
+    "secondary_patient_threshold_source": "Fold-1 development Youden J saved before final refit",
+    "primary_patient_aggregation": "mean malignant probability across all patient frames",
+    "secondary_benchmark_patient_aggregation": "confidence-weighted majority voting"
+  },
+  "image_metrics_0_5": {
+    "threshold": 0.5,
+    "n": 2094,
+    "roc_auc": 0.9342058704898798,
+    "auprc": 0.9199395645450834,
+    "accuracy": 0.828080229226361,
+    "balanced_accuracy": 0.821217732472866,
+    "sensitivity_malignant": 0.7227926078028748,
+    "specificity_benign": 0.9196428571428571,
+    "precision_malignant": 0.8866498740554156,
+    "f1_malignant": 0.7963800904977375,
+    "mcc": 0.6604441080249758,
+    "brier": 0.16597377848149145,
+    "tn": 1030,
+    "fp": 90,
+    "fn": 270,
+    "tp": 704
+  },
+  "patient_metrics_0_5_primary": {
+    "threshold": 0.5,
+    "n": 739,
+    "roc_auc": 0.949309398347253,
+    "auprc": 0.9393278682791523,
+    "accuracy": 0.851150202976996,
+    "balanced_accuracy": 0.8470988859369726,
+    "sensitivity_malignant": 0.7563739376770539,
+    "specificity_benign": 0.9378238341968912,
+    "precision_malignant": 0.9175257731958762,
+    "f1_malignant": 0.8291925465838509,
+    "mcc": 0.7097063956082581,
+    "brier": 0.12029101312869406,
+    "tn": 362,
+    "fp": 24,
+    "fn": 86,
+    "tp": 267
+  },
+  "patient_metrics_development_threshold_secondary": {
+    "threshold": 0.24900402128696442,
+    "n": 739,
+    "roc_auc": 0.949309398347253,
+    "auprc": 0.9393278682791523,
+    "accuracy": 0.871447902571042,
+    "balanced_accuracy": 0.8714937838512233,
+    "sensitivity_malignant": 0.8725212464589235,
+    "specificity_benign": 0.8704663212435233,
+    "precision_malignant": 0.8603351955307262,
+    "f1_malignant": 0.8663853727144867,
+    "mcc": 0.742606165612684,
+    "brier": 0.12029101312869406,
+    "tn": 336,
+    "fp": 50,
+    "fn": 45,
+    "tp": 308
+  },
+  "patient_metrics_wmv_secondary": {
+    "n": 739,
+    "accuracy": 0.851150202976996,
+    "balanced_accuracy": 0.8470988859369726,
+    "sensitivity_malignant": 0.7563739376770539,
+    "specificity_benign": 0.9378238341968912,
+    "precision_malignant": 0.9175257731958762,
+    "f1_malignant": 0.8291925465838509,
+    "mcc": 0.7097063956082581,
+    "tn": 362,
+    "fp": 24,
+    "fn": 86,
+    "tp": 267
+  },
+  "calibration": {
+    "image_ece_10": 0.1647662559223727,
+    "patient_ece_10": 0.11652307603247243,
+    "image_brier": 0.16597377848149145,
+    "patient_brier": 0.12029101312869406
+  },
+  "segmentation": {
+    "threshold": 0.5,
+    "mean_dice": 0.8801731888851202,
+    "median_dice": 0.9083755049421707,
+    "mean_iou": 0.7996386114240914,
+    "median_iou": 0.8321318461646658,
+    "geometry": "original_ultrasound",
+    "coordinate_policy": "Generate the auxiliary segmentation probability map on the exact aspect-ratio-preserving padded 512x512 model input; after inference remove only synthetic preprocessing padding, resize the valid probability map to the original ultrasound dimensions, apply the frozen 0.5 mask threshold, and compare with the untouched original expert mask.",
+    "directly_comparable_to_custom_yolo_original_geometry": true,
+    "historical_padded_512_secondary": {
+      "mean_dice": 0.8816411432624829,
+      "median_dice": 0.9094246029853821,
+      "mean_iou": 0.8020189474957405,
+      "median_iou": 0.8338943123817444,
+      "geometry": "512x512 aspect-ratio-preserving resize/pad evaluation space"
+    }
+  },
+  "bootstrap_95_ci": {
+    "patient_roc_auc": [
+      0.9348129722202149,
+      0.9626159427638987
+    ],
+    "patient_auprc": [
+      0.917644379438197,
+      0.957642558059207
+    ],
+    "patient_accuracy_0_5": [
+      0.8254397834912043,
+      0.8755074424898511
+    ],
+    "patient_balanced_accuracy_0_5": [
+      0.8214920905819101,
+      0.8712179471755979
+    ],
+    "patient_sensitivity_0_5": [
+      0.709581873208028,
+      0.8
+    ],
+    "patient_specificity_0_5": [
+      0.9126964863615349,
+      0.9601063829787234
+    ],
+    "patient_f1_0_5": [
+      0.7955974842767296,
+      0.8584347889224081
+    ],
+    "patient_mcc_0_5": [
+      0.6615431680603413,
+      0.7569647730769667
+    ],
+    "image_roc_auc_patient_cluster": [
+      0.9186839630427335,
+      0.9486794564082839
+    ],
+    "image_auprc_patient_cluster": [
+      0.89768000009453,
+      0.9399563191783139
+    ],
+    "mean_segmentation_dice_patient_cluster": [
+      0.872849454062034,
+      0.8871883889085064
+    ],
+    "mean_segmentation_iou_patient_cluster": [
+      0.7907275529409341,
+      0.8081693819792174
+    ],
+    "mean_segmentation_dice_padded_512_patient_cluster_secondary": [
+      0.8736260944147568,
+      0.8889245285804029
+    ],
+    "mean_segmentation_iou_padded_512_patient_cluster_secondary": [
+      0.7925278981850798,
+      0.8105664657766513
+    ]
+  }
+}

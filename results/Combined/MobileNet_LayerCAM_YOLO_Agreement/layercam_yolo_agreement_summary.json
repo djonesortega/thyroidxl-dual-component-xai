@@ -1,0 +1,150 @@
+{
+  "status": "THYROIDXL_MOBILENET_LAYERCAM_YOLO_SPATIAL_AGREEMENT",
+  "protocol_version": "mobilenet_layercam32_16_yolo_topmask_original_geometry_v1",
+  "official_test_used_for_tuning": false,
+  "mobile_checkpoint": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\Models\\MobileNetV3\\mobilenetv3_thyroidxl_modelB_v2_officialtrain9541_onefoldselected_512_seed42_final.pt",
+  "mobile_training_manifest": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\results\\MobileNet\\mobilenetv3_thyroidxl_modelB_v2_officialtrain9541_onefoldselected_512_seed42_final_training_manifest.json",
+  "mobile_layercam": {
+    "target_resolutions": [
+      32,
+      16
+    ],
+    "target_layers": [
+      "backbone.blocks.5.0.conv_pw",
+      "backbone.blocks.6.0.conv"
+    ],
+    "frame_threshold": 0.5,
+    "top_fraction": 0.15,
+    "target_policy": "predicted binary class: malignant -> +logit; benign -> -logit"
+  },
+  "yolo_checkpoint": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\Models\\YOLOv8sSeg\\thyroidxl_yolov8s_seg_officialtrain9541_onefoldselected_640_seed42_final.pt",
+  "yolo_checkpoint_sha256": "a9dcd76aa76fa91ae2b9d61820fdd53a06df7e98f10efb5bb2dea8efdc01e92b",
+  "yolo_inference": {
+    "image_size": 640,
+    "retrieval_confidence": 0.001,
+    "nms_iou": 0.7,
+    "max_detections": 300,
+    "augment": false,
+    "retina_masks": true,
+    "mask_rule": "highest-confidence retained detection"
+  },
+  "comparison_coordinate_space": "original_ultrasound",
+  "overall": {
+    "n_images": 2094,
+    "n_patients": 739,
+    "yolo_detection_coverage": 0.9995224450811844,
+    "patient_balanced_mean_layercam_yolo_top15_iou": 0.3350052529544196,
+    "patient_balanced_mean_layercam_yolo_top15_dice": 0.47392869840609275,
+    "patient_balanced_mean_layercam_yolo_any_overlap": 0.9993234100135318,
+    "patient_balanced_mean_layercam_peak_inside_yolo": 0.9568673883626523,
+    "patient_balanced_mean_layercam_energy_inside_yolo": 0.2447118465235263,
+    "patient_balanced_mean_layercam_expert_top15_iou": 0.3262819905512636,
+    "patient_balanced_mean_layercam_expert_strict_pointing_hit": 0.9512291384754171,
+    "patient_balanced_mean_layercam_expert_nodule_energy_fraction": 0.24023372791124503,
+    "patient_balanced_mean_yolo_expert_mask_iou": 0.796121757710986,
+    "patient_balanced_mean_yolo_expert_mask_dice": 0.8777085029062925
+  },
+  "patient_bootstrap_ci95": {
+    "layercam_yolo_top15_iou": {
+      "estimate": 0.3350052529544196,
+      "ci95_low": 0.3224910430273646,
+      "ci95_high": 0.3482827360996316
+    },
+    "layercam_yolo_top15_dice": {
+      "estimate": 0.47392869840609275,
+      "ci95_low": 0.46020993294555496,
+      "ci95_high": 0.48802264713999316
+    },
+    "layercam_yolo_any_overlap": {
+      "estimate": 0.9993234100135318,
+      "ci95_low": 0.9979702300405954,
+      "ci95_high": 1.0
+    },
+    "layercam_peak_inside_yolo": {
+      "estimate": 0.9568673883626523,
+      "ci95_low": 0.9456326116373475,
+      "ci95_high": 0.9662390054127198
+    },
+    "layercam_energy_inside_yolo": {
+      "estimate": 0.2447118465235263,
+      "ci95_low": 0.23541556380483553,
+      "ci95_high": 0.2547843370341561
+    }
+  },
+  "by_diagnosis": {
+    "benign": {
+      "n_images": 1120,
+      "n_patients": 386,
+      "yolo_detection_coverage": 0.9991071428571429,
+      "patient_balanced_mean_layercam_yolo_top15_iou": 0.3677350600414998,
+      "patient_balanced_mean_layercam_yolo_top15_dice": 0.5081756442297105,
+      "patient_balanced_mean_layercam_yolo_any_overlap": 0.9987046632124352,
+      "patient_balanced_mean_layercam_peak_inside_yolo": 0.9392271157167531,
+      "patient_balanced_mean_layercam_energy_inside_yolo": 0.25756334574258055,
+      "patient_balanced_mean_layercam_expert_top15_iou": 0.35837329484851804,
+      "patient_balanced_mean_layercam_expert_strict_pointing_hit": 0.9301597582037997,
+      "patient_balanced_mean_layercam_expert_nodule_energy_fraction": 0.25365384884202585,
+      "patient_balanced_mean_yolo_expert_mask_iou": 0.8028261873355121,
+      "patient_balanced_mean_yolo_expert_mask_dice": 0.8773844134357903
+    },
+    "malignant": {
+      "n_images": 974,
+      "n_patients": 353,
+      "yolo_detection_coverage": 1.0,
+      "patient_balanced_mean_layercam_yolo_top15_iou": 0.29921571885919857,
+      "patient_balanced_mean_layercam_yolo_top15_dice": 0.436480196740607,
+      "patient_balanced_mean_layercam_yolo_any_overlap": 1.0,
+      "patient_balanced_mean_layercam_peak_inside_yolo": 0.9761567516525023,
+      "patient_balanced_mean_layercam_energy_inside_yolo": 0.230658932363314,
+      "patient_balanced_mean_layercam_expert_top15_iou": 0.2911906493083734,
+      "patient_balanced_mean_layercam_expert_strict_pointing_hit": 0.9742681775259678,
+      "patient_balanced_mean_layercam_expert_nodule_energy_fraction": 0.22555903476880487,
+      "patient_balanced_mean_yolo_expert_mask_iou": 0.7887905683765184,
+      "patient_balanced_mean_yolo_expert_mask_dice": 0.8780628896927343
+    }
+  },
+  "detected_only": {
+    "summary": {
+      "n_images": 2093,
+      "n_patients": 739,
+      "yolo_detection_coverage": 1.0,
+      "patient_balanced_mean_layercam_yolo_top15_iou": 0.335379466983588,
+      "patient_balanced_mean_layercam_yolo_top15_dice": 0.47441059505125915,
+      "patient_balanced_mean_layercam_yolo_any_overlap": 1.0,
+      "patient_balanced_mean_layercam_peak_inside_yolo": 0.9575439783491204,
+      "patient_balanced_mean_layercam_energy_inside_yolo": 0.24502733291938375,
+      "patient_balanced_mean_layercam_expert_top15_iou": 0.3264277924430642,
+      "patient_balanced_mean_layercam_expert_strict_pointing_hit": 0.9519057284618854,
+      "patient_balanced_mean_layercam_expert_nodule_energy_fraction": 0.24030874897014698,
+      "patient_balanced_mean_yolo_expert_mask_iou": 0.7967431561208724,
+      "patient_balanced_mean_yolo_expert_mask_dice": 0.8783563237079534
+    },
+    "patient_bootstrap_ci95": {
+      "layercam_yolo_top15_iou": {
+        "estimate": 0.335379466983588,
+        "ci95_low": 0.3227127220236724,
+        "ci95_high": 0.3482877898445786
+      },
+      "layercam_yolo_top15_dice": {
+        "estimate": 0.47441059505125915,
+        "ci95_low": 0.46059735620114245,
+        "ci95_high": 0.4885570490611668
+      },
+      "layercam_yolo_any_overlap": {
+        "estimate": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0
+      },
+      "layercam_peak_inside_yolo": {
+        "estimate": 0.9575439783491204,
+        "ci95_low": 0.9469432228236356,
+        "ci95_high": 0.9676367275597656
+      },
+      "layercam_energy_inside_yolo": {
+        "estimate": 0.24502733291938375,
+        "ci95_low": 0.23548164085774706,
+        "ci95_high": 0.25461478036361473
+      }
+    }
+  }
+}

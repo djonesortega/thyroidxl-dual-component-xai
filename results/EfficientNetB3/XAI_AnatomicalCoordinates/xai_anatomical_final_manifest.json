@@ -1,0 +1,159 @@
+{
+  "status": "THYROIDXL_EFFICIENTNETB3_XAI_ANATOMICAL_COORDINATE_FINAL_TEST",
+  "protocol_version": "method_specific_anatomical_coordinates_v4",
+  "model": "EfficientNet-B3",
+  "final_checkpoint": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\Models\\EfficientNetB3\\efficientnetb3_thyroidxl_multiscale_officialtrain9541_onefoldselected_512_seed42_final.pt",
+  "final_checkpoint_sha256": "890f719894eab4b36eac3edfbb9fbcceec546daa73c02f6dd9b0400e75e207ea",
+  "training_manifest": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\results\\EfficientNetB3\\efficientnetb3_thyroidxl_multiscale_officialtrain9541_onefoldselected_512_seed42_final_training_manifest.json",
+  "freeze_file": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\results\\EfficientNetB3\\XAI_AnatomicalCoordinates\\efficientnetb3_xai_anatomical_freeze.json",
+  "development_checkpoint_used": false,
+  "configuration_source": "matched_architecture_fixed_16x16_configuration",
+  "selected_methods": {
+    "Grad-CAM": {
+      "target_layers": [
+        "backbone.conv_head"
+      ],
+      "target_resolutions": [
+        16
+      ],
+      "n_target_layers": 1
+    },
+    "Grad-CAM++": {
+      "target_layers": [
+        "backbone.conv_head"
+      ],
+      "target_resolutions": [
+        16
+      ],
+      "n_target_layers": 1
+    },
+    "Layer-CAM": {
+      "target_layers": [
+        "backbone.conv_head"
+      ],
+      "target_resolutions": [
+        16
+      ],
+      "n_target_layers": 1
+    }
+  },
+  "same_target_layer_for_all_methods": false,
+  "official_test_images": 2094,
+  "official_test_patients": 739,
+  "official_test_used_for_xai_layer_selection": false,
+  "coordinate_space_for_localisation_metrics": "original_ultrasound",
+  "cam_generation_space": "exact_padded_model_input",
+  "padding_removed_after_cam_generation": true,
+  "cam_retuned_after_test": false,
+  "expert_mask_used_to_modify_cam": false,
+  "yolo_mask_used_to_modify_cam": false,
+  "bootstrap_unit": "patient",
+  "bootstrap_samples": 2000,
+  "methods": [
+    {
+      "model": "EfficientNet-B3",
+      "method": "Grad-CAM",
+      "target_layers": "backbone.conv_head",
+      "target_resolutions": "16",
+      "n_target_layers": 1,
+      "n_images": 2094,
+      "n_patients": 739,
+      "patient_balanced_mean_top15_iou": 0.2106089033339212,
+      "patient_balanced_mean_top15_dice": 0.3154565668350413,
+      "patient_balanced_mean_overlap_hit_0_5": 0.8384754172304917,
+      "patient_balanced_mean_strict_pointing_hit": 0.5768831754623365,
+      "patient_balanced_mean_nodule_energy_fraction": 0.27472657727145317,
+      "patient_balanced_mean_inside_outside_ratio": 7.624889948856182,
+      "patient_balanced_mean_padding_energy_fraction": 0.14231587259916337,
+      "patient_balanced_mean_peak_in_padding": 0.04536535859269283,
+      "patient_balanced_top15_iou_ci95_low": 0.19999541324806464,
+      "patient_balanced_top15_iou_ci95_high": 0.22180321136863332,
+      "patient_balanced_top15_dice_ci95_low": 0.301352191791336,
+      "patient_balanced_top15_dice_ci95_high": 0.3304060098249418,
+      "patient_balanced_overlap_hit_0_5_ci95_low": 0.818334460983311,
+      "patient_balanced_overlap_hit_0_5_ci95_high": 0.8586611975642758,
+      "patient_balanced_strict_pointing_hit_ci95_low": 0.5504034167794317,
+      "patient_balanced_strict_pointing_hit_ci95_high": 0.603823861073523,
+      "patient_balanced_nodule_energy_fraction_ci95_low": 0.2602810101935537,
+      "patient_balanced_nodule_energy_fraction_ci95_high": 0.2902132147009354,
+      "patient_balanced_inside_outside_ratio_ci95_low": 7.203534240597735,
+      "patient_balanced_inside_outside_ratio_ci95_high": 8.060775523254732,
+      "patient_balanced_padding_energy_fraction_ci95_low": 0.13906561119100505,
+      "patient_balanced_padding_energy_fraction_ci95_high": 0.14561004908388248,
+      "patient_balanced_peak_in_padding_ci95_low": 0.03580232295895354,
+      "patient_balanced_peak_in_padding_ci95_high": 0.05523314163283718,
+      "correct_prediction_patient_balanced_top15_iou": 0.23773275148794792,
+      "incorrect_prediction_patient_balanced_top15_iou": 0.08263107674024059
+    },
+    {
+      "model": "EfficientNet-B3",
+      "method": "Grad-CAM++",
+      "target_layers": "backbone.conv_head",
+      "target_resolutions": "16",
+      "n_target_layers": 1,
+      "n_images": 2094,
+      "n_patients": 739,
+      "patient_balanced_mean_top15_iou": 0.1882057373273737,
+      "patient_balanced_mean_top15_dice": 0.295520058896756,
+      "patient_balanced_mean_overlap_hit_0_5": 0.885893098782138,
+      "patient_balanced_mean_strict_pointing_hit": 0.4346075778078485,
+      "patient_balanced_mean_nodule_energy_fraction": 0.23597148041121896,
+      "patient_balanced_mean_inside_outside_ratio": 5.1666304835086585,
+      "patient_balanced_mean_padding_energy_fraction": 0.4769848928138428,
+      "patient_balanced_mean_peak_in_padding": 0.2761953089760938,
+      "patient_balanced_top15_iou_ci95_low": 0.17944463224777404,
+      "patient_balanced_top15_iou_ci95_high": 0.1965059931567929,
+      "patient_balanced_top15_dice_ci95_low": 0.2837283738474365,
+      "patient_balanced_top15_dice_ci95_high": 0.30679741254674386,
+      "patient_balanced_overlap_hit_0_5_ci95_low": 0.868726037437979,
+      "patient_balanced_overlap_hit_0_5_ci95_high": 0.9027974176815519,
+      "patient_balanced_strict_pointing_hit_ci95_low": 0.4073959742895807,
+      "patient_balanced_strict_pointing_hit_ci95_high": 0.46226939557961194,
+      "patient_balanced_nodule_energy_fraction_ci95_low": 0.22359957863414476,
+      "patient_balanced_nodule_energy_fraction_ci95_high": 0.24871638605214405,
+      "patient_balanced_inside_outside_ratio_ci95_low": 4.975696000252411,
+      "patient_balanced_inside_outside_ratio_ci95_high": 5.364774317101828,
+      "patient_balanced_padding_energy_fraction_ci95_low": 0.4695671343813695,
+      "patient_balanced_padding_energy_fraction_ci95_high": 0.48431683332669245,
+      "patient_balanced_peak_in_padding_ci95_low": 0.25386530221019404,
+      "patient_balanced_peak_in_padding_ci95_high": 0.29855886332882264,
+      "correct_prediction_patient_balanced_top15_iou": 0.20296184358575411,
+      "incorrect_prediction_patient_balanced_top15_iou": 0.1223061265109351
+    },
+    {
+      "model": "EfficientNet-B3",
+      "method": "Layer-CAM",
+      "target_layers": "backbone.conv_head",
+      "target_resolutions": "16",
+      "n_target_layers": 1,
+      "n_images": 2094,
+      "n_patients": 739,
+      "patient_balanced_mean_top15_iou": 0.31563327106607836,
+      "patient_balanced_mean_top15_dice": 0.45294299066726124,
+      "patient_balanced_mean_overlap_hit_0_5": 0.997699594046008,
+      "patient_balanced_mean_strict_pointing_hit": 0.8197338746053224,
+      "patient_balanced_mean_nodule_energy_fraction": 0.2393392371227295,
+      "patient_balanced_mean_inside_outside_ratio": 5.2398185283814,
+      "patient_balanced_mean_padding_energy_fraction": 0.17678873990043123,
+      "patient_balanced_mean_peak_in_padding": 0.032295895354082095,
+      "patient_balanced_top15_iou_ci95_low": 0.30353271917907254,
+      "patient_balanced_top15_iou_ci95_high": 0.32775585213102104,
+      "patient_balanced_top15_dice_ci95_low": 0.439365389258064,
+      "patient_balanced_top15_dice_ci95_high": 0.46669727413130135,
+      "patient_balanced_overlap_hit_0_5_ci95_low": 0.9940460081190797,
+      "patient_balanced_overlap_hit_0_5_ci95_high": 1.0,
+      "patient_balanced_strict_pointing_hit_ci95_low": 0.7990753270184933,
+      "patient_balanced_strict_pointing_hit_ci95_high": 0.8405739738385207,
+      "patient_balanced_nodule_energy_fraction_ci95_low": 0.2286902602436237,
+      "patient_balanced_nodule_energy_fraction_ci95_high": 0.25011492700442184,
+      "patient_balanced_inside_outside_ratio_ci95_low": 5.1126392893306845,
+      "patient_balanced_inside_outside_ratio_ci95_high": 5.368581817223993,
+      "patient_balanced_padding_energy_fraction_ci95_low": 0.17475496594760032,
+      "patient_balanced_padding_energy_fraction_ci95_high": 0.17891280417245595,
+      "patient_balanced_peak_in_padding_ci95_low": 0.02288960306720794,
+      "patient_balanced_peak_in_padding_ci95_high": 0.043188994136220106,
+      "correct_prediction_patient_balanced_top15_iou": 0.3249130126537024,
+      "incorrect_prediction_patient_balanced_top15_iou": 0.2441913202417671
+    }
+  ]
+}

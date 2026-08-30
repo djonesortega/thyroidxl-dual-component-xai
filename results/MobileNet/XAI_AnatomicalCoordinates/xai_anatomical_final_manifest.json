@@ -1,0 +1,161 @@
+{
+  "status": "THYROIDXL_MOBILENETV3_XAI_ANATOMICAL_COORDINATE_FINAL_TEST",
+  "protocol_version": "method_specific_anatomical_coordinates_v4",
+  "model": "MobileNetV3",
+  "final_checkpoint": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\Models\\MobileNetV3\\mobilenetv3_thyroidxl_modelB_v2_officialtrain9541_onefoldselected_512_seed42_final.pt",
+  "final_checkpoint_sha256": "fa620969d04a6d71a2393d22a1da1909d8abf6ec653ab4439905529c4e7f1812",
+  "training_manifest": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\results\\MobileNet\\mobilenetv3_thyroidxl_modelB_v2_officialtrain9541_onefoldselected_512_seed42_final_training_manifest.json",
+  "freeze_file": "C:\\Users\\djones\\Downloads\\New folder (26)\\ThyroidXL\\results\\MobileNet\\XAI_AnatomicalCoordinates\\mobilenet_xai_anatomical_freeze.json",
+  "development_checkpoint_used": false,
+  "configuration_source": "locked_mobile_final_configuration_gradcam16_gradcampp16_layercam32plus16",
+  "selected_methods": {
+    "Grad-CAM": {
+      "target_layers": [
+        "backbone.blocks.6.0.conv"
+      ],
+      "target_resolutions": [
+        16
+      ],
+      "n_target_layers": 1
+    },
+    "Grad-CAM++": {
+      "target_layers": [
+        "backbone.blocks.6.0.conv"
+      ],
+      "target_resolutions": [
+        16
+      ],
+      "n_target_layers": 1
+    },
+    "Layer-CAM": {
+      "target_layers": [
+        "backbone.blocks.5.0.conv_pw",
+        "backbone.blocks.6.0.conv"
+      ],
+      "target_resolutions": [
+        32,
+        16
+      ],
+      "n_target_layers": 2
+    }
+  },
+  "same_target_layer_for_all_methods": false,
+  "official_test_images": 2094,
+  "official_test_patients": 739,
+  "official_test_used_for_xai_layer_selection": false,
+  "coordinate_space_for_localisation_metrics": "original_ultrasound",
+  "cam_generation_space": "exact_padded_model_input",
+  "padding_removed_after_cam_generation": true,
+  "cam_retuned_after_test": false,
+  "expert_mask_used_to_modify_cam": false,
+  "yolo_mask_used_to_modify_cam": false,
+  "bootstrap_unit": "patient",
+  "bootstrap_samples": 2000,
+  "methods": [
+    {
+      "model": "MobileNetV3",
+      "method": "Grad-CAM",
+      "target_layers": "backbone.blocks.6.0.conv",
+      "target_resolutions": "16",
+      "n_target_layers": 1,
+      "n_images": 2094,
+      "n_patients": 739,
+      "patient_balanced_mean_top15_iou": 0.12061175035319559,
+      "patient_balanced_mean_top15_dice": 0.1935923315098111,
+      "patient_balanced_mean_overlap_hit_0_5": 0.688892647722147,
+      "patient_balanced_mean_strict_pointing_hit": 0.3023680649526387,
+      "patient_balanced_mean_nodule_energy_fraction": 0.149850211770238,
+      "patient_balanced_mean_inside_outside_ratio": 2.6621598562376536,
+      "patient_balanced_mean_padding_energy_fraction": 0.27880205859822554,
+      "patient_balanced_mean_peak_in_padding": 0.7240076680198466,
+      "patient_balanced_top15_iou_ci95_low": 0.11244295230940986,
+      "patient_balanced_top15_iou_ci95_high": 0.12884982355891642,
+      "patient_balanced_top15_dice_ci95_low": 0.18200548418499873,
+      "patient_balanced_top15_dice_ci95_high": 0.2055230681778779,
+      "patient_balanced_overlap_hit_0_5_ci95_low": 0.6648959742895807,
+      "patient_balanced_overlap_hit_0_5_ci95_high": 0.7121456359945874,
+      "patient_balanced_strict_pointing_hit_ci95_low": 0.2773331078033378,
+      "patient_balanced_strict_pointing_hit_ci95_high": 0.3266356562922868,
+      "patient_balanced_nodule_energy_fraction_ci95_low": 0.13858499473599897,
+      "patient_balanced_nodule_energy_fraction_ci95_high": 0.16194439786645165,
+      "patient_balanced_inside_outside_ratio_ci95_low": 2.5074157054498016,
+      "patient_balanced_inside_outside_ratio_ci95_high": 2.818091958808842,
+      "patient_balanced_padding_energy_fraction_ci95_low": 0.2691120550286218,
+      "patient_balanced_padding_energy_fraction_ci95_high": 0.28894815333192103,
+      "patient_balanced_peak_in_padding_ci95_low": 0.6979248421290032,
+      "patient_balanced_peak_in_padding_ci95_high": 0.7509167794316643,
+      "correct_prediction_patient_balanced_top15_iou": 0.13005700721030344,
+      "incorrect_prediction_patient_balanced_top15_iou": 0.059136958616851254
+    },
+    {
+      "model": "MobileNetV3",
+      "method": "Grad-CAM++",
+      "target_layers": "backbone.blocks.6.0.conv",
+      "target_resolutions": "16",
+      "n_target_layers": 1,
+      "n_images": 2094,
+      "n_patients": 739,
+      "patient_balanced_mean_top15_iou": 0.08227744847198189,
+      "patient_balanced_mean_top15_dice": 0.1331772532886308,
+      "patient_balanced_mean_overlap_hit_0_5": 0.6796008119079838,
+      "patient_balanced_mean_strict_pointing_hit": 0.2844722598105548,
+      "patient_balanced_mean_nodule_energy_fraction": 0.11160868587493694,
+      "patient_balanced_mean_inside_outside_ratio": 1.8799866937371759,
+      "patient_balanced_mean_padding_energy_fraction": 0.42342922684038375,
+      "patient_balanced_mean_peak_in_padding": 0.3498534055029318,
+      "patient_balanced_top15_iou_ci95_low": 0.07572416956780294,
+      "patient_balanced_top15_iou_ci95_high": 0.08850538020883052,
+      "patient_balanced_top15_dice_ci95_low": 0.12359173857141426,
+      "patient_balanced_top15_dice_ci95_high": 0.142319455525857,
+      "patient_balanced_overlap_hit_0_5_ci95_low": 0.6573063261163739,
+      "patient_balanced_overlap_hit_0_5_ci95_high": 0.7023477672530449,
+      "patient_balanced_strict_pointing_hit_ci95_low": 0.26186287776274264,
+      "patient_balanced_strict_pointing_hit_ci95_high": 0.30726544880469114,
+      "patient_balanced_nodule_energy_fraction_ci95_low": 0.1015468557821943,
+      "patient_balanced_nodule_energy_fraction_ci95_high": 0.12158380049571779,
+      "patient_balanced_inside_outside_ratio_ci95_low": 1.7503312750518092,
+      "patient_balanced_inside_outside_ratio_ci95_high": 2.015935976360342,
+      "patient_balanced_padding_energy_fraction_ci95_low": 0.4162412098754007,
+      "patient_balanced_padding_energy_fraction_ci95_high": 0.43070258201002687,
+      "patient_balanced_peak_in_padding_ci95_low": 0.3272871560667573,
+      "patient_balanced_peak_in_padding_ci95_high": 0.3715178168696439,
+      "correct_prediction_patient_balanced_top15_iou": 0.08790672276607787,
+      "incorrect_prediction_patient_balanced_top15_iou": 0.05252472163349178
+    },
+    {
+      "model": "MobileNetV3",
+      "method": "Layer-CAM",
+      "target_layers": "backbone.blocks.5.0.conv_pw|backbone.blocks.6.0.conv",
+      "target_resolutions": "32|16",
+      "n_target_layers": 2,
+      "n_images": 2094,
+      "n_patients": 739,
+      "patient_balanced_mean_top15_iou": 0.32628203961464114,
+      "patient_balanced_mean_top15_dice": 0.4626450604079628,
+      "patient_balanced_mean_overlap_hit_0_5": 0.9966283265674335,
+      "patient_balanced_mean_strict_pointing_hit": 0.9512291384754171,
+      "patient_balanced_mean_nodule_energy_fraction": 0.24023372486708813,
+      "patient_balanced_mean_inside_outside_ratio": 5.421239295328388,
+      "patient_balanced_mean_padding_energy_fraction": 0.1742137034830658,
+      "patient_balanced_mean_peak_in_padding": 0.002931889941362201,
+      "patient_balanced_top15_iou_ci95_low": 0.3133352795369699,
+      "patient_balanced_top15_iou_ci95_high": 0.33950302037604535,
+      "patient_balanced_top15_dice_ci95_low": 0.44846943998956695,
+      "patient_balanced_top15_dice_ci95_high": 0.47716587428281615,
+      "patient_balanced_overlap_hit_0_5_ci95_low": 0.9927940347316191,
+      "patient_balanced_overlap_hit_0_5_ci95_high": 0.9992904262516915,
+      "patient_balanced_strict_pointing_hit_ci95_low": 0.9391404488046912,
+      "patient_balanced_strict_pointing_hit_ci95_high": 0.9628103856562918,
+      "patient_balanced_nodule_energy_fraction_ci95_low": 0.23057114034492068,
+      "patient_balanced_nodule_energy_fraction_ci95_high": 0.25031965974958487,
+      "patient_balanced_inside_outside_ratio_ci95_low": 5.284731498258735,
+      "patient_balanced_inside_outside_ratio_ci95_high": 5.560203012518195,
+      "patient_balanced_padding_energy_fraction_ci95_low": 0.17195482510110657,
+      "patient_balanced_padding_energy_fraction_ci95_high": 0.17627135945607997,
+      "patient_balanced_peak_in_padding_ci95_low": 0.0006765899864682003,
+      "patient_balanced_peak_in_padding_ci95_high": 0.0058637798827244035,
+      "correct_prediction_patient_balanced_top15_iou": 0.3360589218701691,
+      "incorrect_prediction_patient_balanced_top15_iou": 0.25900905693208265
+    }
+  ]
+}
