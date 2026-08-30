@@ -168,17 +168,9 @@ pip install -r requirements.txt
 
 ---
 
-### 8) README
-
-* Instructions and guidance for the project and its supplementary materials.
-
----
-
 ## Citation
 
 ### ThyroidXL Dataset
-
-If you use the ThyroidXL dataset in your research, please cite:
 
 ```bibtex
 @inproceedings{10.1007/978-3-032-05182-0_60,
@@ -193,48 +185,5 @@ If you use the ThyroidXL dataset in your research, please cite:
 }
 ```
 
-### Publication
-
-Jones Ortega, D. and Hafeez, Y. **Explainable Dual-Component Deep Learning for Thyroid Nodule Malignancy Assessment on Ultrasound.**
-
-The final journal citation and DOI can be added once available.
-
 ---
 
-## References
-
-ThyroidXL: <br>
-Duong, V.H., Vu, H., Phan, H.D., Nguyen, D.Q., Pham, D.H., Le, Q.T., Nguyen, B.S., Do, T.D., Dinh, V.S., Nguyen, T.C., Pham, H.H. and Ngo, D.H. ThyroidXL: Advancing Thyroid Nodule Diagnosis with an Expert-Labeled, Pathology-Validated Dataset. Medical Image Computing and Computer Assisted Intervention – MICCAI 2025. https://doi.org/10.1007/978-3-032-05182-0_60
-
-GRAD-CAM: <br>
-Selvaraju, R.R., Cogswell, M., Das, A., Vedantam, R., Parikh, D. and Batra, D., 2017. Grad-cam: Visual explanations from deep networks via gradient-based localization. In Proceedings of the IEEE International Conference on Computer Vision (pp. 618-626).
-
-GRAD-CAM++: <br>
-Chattopadhay, A., Sarkar, A., Howlader, P. and Balasubramanian, V.N., 2018. Grad-cam++: Generalized gradient-based visual explanations for deep convolutional networks. In 2018 IEEE Winter Conference on Applications of Computer Vision (WACV) (pp. 839-847).
-
-LayerCAM: <br>
-Jiang, P.T., Zhang, C.B., Hou, Q., Cheng, M.M. and Wei, Y., 2021. Layercam: Exploring hierarchical class activation maps for localization. IEEE Transactions on Image Processing, 30, pp. 5875-5888.
-
-EfficientNet-B3: <br>
-Tan, M. and Le, Q., 2019. Efficientnet: Rethinking model scaling for convolutional neural networks. In International Conference on Machine Learning (pp. 6105-6114). PMLR.
-
-MobileNetV3: <br>
-Howard, A., Sandler, M., Chu, G., Chen, L.C., Chen, B., Tan, M., Wang, W., Zhu, Y., Pang, R., Vasudevan, V. and Le, Q.V., 2019. Searching for MobileNetV3. In Proceedings of the IEEE/CVF International Conference on Computer Vision (pp. 1314-1324).
-
-ConvNeXt-Tiny: <br>
-Liu, Z., Mao, H., Wu, C.Y., Feichtenhofer, C., Darrell, T. and Xie, S., 2022. A ConvNet for the 2020s. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 11976-11986).
-
-YOLOv8: <br>
-Jocher, G., Chaurasia, A. and Qiu, J. Ultralytics YOLOv8. https://github.com/ultralytics/ultralytics (2023).
-
-Albumentations: <br>
-Buslaev, A., Iglovikov, V.I., Khvedchenya, E., Parinov, A., Druzhinin, M. and Kalinin, A.A., 2020. Albumentations: Fast and flexible image augmentations. Information, 11(2), p.125.
-
-PyTorch: <br>
-Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J., Chanan, G., Killeen, T., Lin, Z., Gimelshein, N., Antiga, L. and Desmaison, A., 2019. PyTorch: An imperative style, high-performance deep learning library. Advances in Neural Information Processing Systems, 32.
-
-scikit-learn: <br>
-Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel, O., Blondel, M., Prettenhofer, P., Weiss, R., Dubourg, V. and Vanderplas, J., 2011. Scikit-learn: Machine learning in Python. Journal of Machine Learning Research, 12, pp. 2825-2830.
-
-timm: <br>
-Wightman, R. PyTorch Image Models (timm). https://github.com/huggingface/pytorch-image-models
